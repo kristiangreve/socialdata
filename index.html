@@ -143,6 +143,7 @@ div.tooltip {
 </script>
 </head>
 <body>
+
     <section class="page-header">
       <h1 class="project-name">Socialdata</h1>
       <h2 class="project-tagline"></h2>
@@ -150,26 +151,40 @@ div.tooltip {
       <a href="https://github.com/kristiangreve/socialdata/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/kristiangreve/socialdata/tarball/master" class="btn">Download .tar.gz</a>
     </section>
+<br>
+    <br>
+
 
     <section class="main-content">
         
-    <h2>Introduction</h2>
+    <h1>Introduction</h1>
     <p> Whoever you were before visiting this page, you’re now a librarian.
     Over the next couple of minutes you are going to know a whole lot more about books in the kingdom of Denmark.
     We took loaner data from the years 2009-2016 and made accessible to you through various visualizations.
     Excited? You should be! Sit back and relax a guided tour through the data. </p>
+
     
 
     <h2>Top books by gender (ratio)</h2>
-    <p>Some prejudices about gender seem to be true: Females loan more books about diets, while males like to read about stamps.</p><br>
+    <p>First off, let’s have a look at what books men and women bring home the most from the danish libraries. Some prejudices about gender seem to be true: Females are more into books about diets, while males like to read about stamps. They also seem to be pretty insecure about their masculinity and borrow DIY books. Take some time to explore the data and you will find that the travel books from Politiken, “Turen går til..” are pretty popular among both genders. You should probably put them somewhere that’s not too embarrassing to go for either men or women.</p>
+
+    <br>
+    <br>
+
     <p id="female"> Top 25 female book loans </p>
     <p id="male"> Top 25 male book loans </p>
+    <br>
+    <br>
     <div id="top25"></div>
+    <br>
+    <br>
+
     <h2>Ages of book readers</h2>
-    <p>The difference between what people of different ages read is noticable in books such as Den Gode Opgave and Jesus, Pengene og Livet.<br>
-    The former (a study book) is mostly read by younger audiences, while the latter (a biography) have a much older audience.</p>
-    <p>Also notice the very young readers (less than 5 years) loaning heavy books such as Zornig's biography depicting her awful childhood.<br>
-    This could be interpreted as either bad data or people using their child's loaner card to be allowed to keep their book a bit longer.</p>
+
+    <p>Interests change over time, and as a librarian you should take this into account when buying or arranging your books. Why not make a nice senior section? The difference between what people of different ages read is particularly noticeable in books such as “Den Gode Opgave” and “Jesus, Pengene og Livet.” The former (a study book) is mostly read by younger audiences, while the latter (a biography) have a much older audience. Also notice the very young readers (less than 5 years) loaning heavy books such as Zornig's biography depicting her awful childhood. What’s up with that? This could be interpreted as either bad data or people using their child's loaner card to be allowed to keep their book a bit longer.</p>
+    <br>
+    <br>
+
     Choose book (top 10 female loans) <select name="" id="book">
         <option value="0">Zornig - vrede er mit mellemnavn</option>
         <option value="1">Den gode opgave</option>
@@ -182,12 +197,17 @@ div.tooltip {
         <option value="8">Jesus, pengene og livet</option>
         <option value="9">Turen går til Tyrkiet</option>
     </select>
+    <br>
+    <br>
     <div id="top10"></div>
-    
-    <h2>Book loans during the year</h2>
-    <p>Again, we see a clear trend in loans of the study book Den Gode Opgave, which seems to drop drastically during the summer vacation and grow again once the fall semester begins.<br>
-    On the other hand, the diet book 5:2 Kuren has its peak at summertime.</p>
-    Choose book (top 10 loans in 2014) <select name="" id="year">
+    <br>
+    <br>
+    <h2>Book loans during the year (top 10 loans in 2014)</h2>
+
+    <p>Again, we see a clear trend in loans of the study book Den Gode Opgave, which seems to drop drastically during the summer vacation and grow again once the fall semester begins. Maybe you should put this book somewhere that those youngsters will pass some real important literature? Other books such as th diet book “5:2 Kuren” has its peak at summertime where people feel like getting beach ready. Have a look at it yourself using the drop down menu.</p>
+<br>
+    <br>
+    <select name="" id="year">
         <option value="0">Så skal der leves!</option>
         <option value="1">Forfulgt</option>
         <option value="2">Den gode opgave</option>
@@ -199,9 +219,18 @@ div.tooltip {
         <option value="8">Turen går til London</option>
         <option value="9">Zornig - vrede er mit mellemnavn</option>
     </select>
+    <br>
+    <br>
     <div id="book_by_month"></div>
+    <br>
+    <br>
+    <h2>Books and municipals (percentage of loaned books)</h2>
+    <p>Just like gender and age are influencing what books people are loaning, geography has an infuence on which categories are most popular. If data is featured from your municipal, try hovering the mouse over it to see the exact percentage of loans that belong to the chosen category. Change the category in the drop-down menu. Have a look at "Praktiske fag", the overall most popular category out of the ten existing dk5 categories. It's especially popular in "Varde" with a 34,5% share of the total loans. In Gentofte that number is 23%. If you're from Gentofte and stuck with a bunch of books on "Praktisk fag" you might want to ship them to your nice colleage on the west coast. Browse the categories and see how you municipal is doing compared to the others.
+    </p>
+    <br>
+    <br>
 
-      <select id="select_popularbooks">
+      <select id="select_popularbooks" style="text-align:center;">
           <option value="kommuneratio/Filosofi.csv">Filosofi, psykologi, videnskab og forskning</option>
           <option value="kommuneratio/KristneReligion.csv">Religion</option>
           <option value="kommuneratio/Haandvaerk.csv">Blandet indhold</option>
@@ -213,9 +242,22 @@ div.tooltip {
           <option value="kommuneratio/Naturvidenskab.csv">Naturvidenskab og matematik</option>
           <option value="kommuneratio/Historie.csv">Historie og biografier</option>
     </select>
-    <div id="map_popularbooks"></div>
+    <br>
+    <br>
+    <div id="map_popularbooks" style="text-align:center;"></div>
+    <br>
+    <br>
 
-    <select id="select_knn">
+    <h2>K nearest neighbors (KNN)</h2>
+    <p> We know what you're thinking: "Where the hell is my municipal? I'm lost". And we're so sorry. The thing is, out of the 99 municipals in Denmark, we've only been provided with data on 49 of them. But fear not, we have a way to let you find out what category is the most popular in your area anyway. Using KNN, we're looking at a grid of points on top of Denmark, and deciding for each point what category is most fitted for that one. We're looking at 50, 100, 200 and 300 nearnest neighbors respecitvely. It turns out that the above mentioned category "Praktiske fag" is indeed the most popular, and it kind of ruins it for all the other nice categories. So if you want to see what category is the bees knees in your community try choosing the "without "Praktiske fag"" options on the drop-down menu.
+    </p>
+    <br>
+    <p> 
+    For "K=200, without "Praktiske fag"", if you're a librarian in Aalborg you might want to focus your library on "Samfundsvidenskab" while all the others read their stupid "Historie og biografier". And if you increase the number of neighbors that are taken into account, you're still on the right path if you bet on "Praktiske fag". Try not to worry about the colored water, nobody's drowning.
+    </p>
+    <br>
+    <br>
+    <select id="select_knn" style="text-align:center;">
           <option value="knn/knn50.csv">K = 50</option>
           <option value="knn/knn100.csv">K = 100</option>
           <option value="knn/knn200.csv">K = 200</option>
@@ -225,16 +267,27 @@ div.tooltip {
           <option value="knn/knn200_edited.csv">K = 200,without "Praktiske fag"</option>
           <option value="knn/knn300_edited.csv">K = 300,without "Praktiske fag"</option>
     </select>
+    <br>
+    <br>
+    <div id="map_knn" style="text-align:center;"></div>
 
-    <div id="map_knn"></div>
+    <br>
+    <br>
 
     <h2>Association rules</h2>
-    <p>Using association mining, the loaner data was searched for association rules. Specifically, associations between book loans were mined using the <a href="http://aimotion.blogspot.dk/2013/01/machine-learning-and-data-mining.html" target="_blank">Apriori algorithm</a>.<br>
-    The following graph networks shows which titles were connected. Firstly, the data was limited to non-fiction litterature, given the amount of meta-data available for these titles (genre was not availble for titles of fiction). Secondly, the loaner data was transformed into a list of loans for each individual loaner in Denmark (more than 1 mio. loaners). <br>
-    This way, the data could be viewed as a list of transactions, were each loan would represent a transaction item. What was interesting in this case, was to explore related items. For example, if you like a book, which other books would you be likely to enjoy, based on the loaner data? <br>
-    Then, the Apriori algorithm was used on loaner data from first 10.000 loaners and then 100.000 loaners. To be able to find the rules of interest for most people, the titles were limited to itemsets with at least 0.5% support (meaning that only titles that were loaned 0.5% or more of the times were considered to be of interest).<br>
-    Furthermore, the rules were filtered by their confidence, meaning the probability that consequent would occur given the knowledge that the antecedent occuring. The confidence threshold were set at 30% for the 10k sample and 10% for the 100k sample (smaller samples will have more rules with high confidence due to samples biases). <br>
-    The graph networks shows associations (represented as edges) between titles (represented as nodes) with confidence as edge labels.</p><br>
+    <p>Ok, guess your coffee break has come to an end, and now you just want the quick and dirty insights? Alright, you earned it. We used something called association mining search the loan data for association rules. An association rule is a rule that says:</p>
+    <br>
+    <p><i>"If you loaned book a, you're going to loan book b with x amount of certanty"</i></p>
+    <br>
+    <p> Specifically, associations between book loans were mined using the <a href="http://aimotion.blogspot.dk/2013/01/machine-learning-and-data-mining.html" target="_blank">Apriori algorithm</a>. 
+
+    The following graph networks shows which titles are connected. Firstly, the data was limited to non-fiction litterature, given the amount of meta-data available for these titles (genre was not availble for titles of fiction). Secondly, the loaner data was transformed into a list of loans for each individual loaner in Denmark (more than 1 mio. loaners).
+    This way, the data could be viewed as a list of transactions, were each loan would represent a transaction item.
+    Then, the Apriori algorithm was used on loaner data from first 10.000 loaners and then 100.000 loaners. To be able to find the rules of interest for most people, the titles were limited to itemsets with at least 0.5% support (meaning that only titles that were loaned 0.5% or more of the times were considered to be of interest).
+    Furthermore, the rules were filtered by their confidence, meaning the probability that consequent would occur given the knowledge that the antecedent occuring. The confidence threshold was set at 30% for the 10k sample and 10% for the 100k sample (smaller samples will have more rules with high confidence due to samples biases).
+    The graph networks shows associations (represented as edges) between titles (represented as nodes) with confidence as edge labels.</p>
+    <br>
+    <br>
     <p id="g10k" class="selected"> Rules for 10k loaners </p>
     <p id="g100k"> Rules for 100k loaners </p>
   <span class='zoom' id='g10kgraph'>
@@ -243,14 +296,32 @@ div.tooltip {
   <span class='zoom hidden' id='g100kgraph'>
     <img src="img/graphs.png" width="960" height="auto"></img>
   </span>
-  <h3>Sorting association pairs by confidence</h3>
-    <p>The rules can be sorted by confidence to explore the most strongly connected associations. The figure below clearly shows how this type of data mining can be used to create a recommendation system that could be implemented on library websites or used to place titles physically near each other.<br>
-    The diagram should be read as: Having loaned the title on the left makes a person likely to loan the title on the right with a confidence shown between the two. For example, the rule with the highest confidence is 'Norge' -> 'Turen går til Norge' (0.714), meaning that 71,4% of the people that loaned the title 'Norge' also loaned 'Turen går til Norge'.<br>
-    It is quite easy to validate that the algorithm functioned as intended by scanning through the top title associations.</p>
-    <div id="rules"></div>
+  <br>
+  <br>
+  <p> Dive into the data on the picture. You're going to see that titles such as "Vi kan sove i flyvemaskinen" and "Jesus, pengene og livet" are the one to stock up on if you want your guests to have something to return for. No matter what else your guests loan, Ulla Therkelsen is a safe bet. Interesting!</p>
+
+
+
+  <h2>Sorting association pairs by confidence</h2>
+  <p>The rules can be sorted by confidence to explore the most strongly connected associations. The figure below clearly shows how this type of data mining can be used to create a recommendation system that could be implemented on library websites or used to place titles physically near each other.
+
+  The diagram should be read as: Having loaned the title on the left makes a person likely to loan the title on the right with a confidence shown between the two. For example, the rule with the highest confidence is 'Norge' -> 'Turen går til Norge' (0.714), meaning that 71,4% of the people that loaned the title 'Norge' also loaned 'Turen går til Norge'.
+  It is quite easy to validate that the algorithm functioned as intended by scanning through the top title associations.</p>
+  <br>
+  <br>
+  <div id="rules"></div>
+
+
+<h2>Thank you</h2>
+  <p>Thanks for stopping by! Hopefully you're a whole lot wiser than when you tuned in. You've learned how age, geography and gender have influence on what books people loan and that there are in fact patterns in what they loan. There's no more excuses for not looking at what people want before buying new books  (Psst 1.1 mio titles were never loaned in the years we looked at. We know you can do better.)</p>
+
+
+
+</section>
 
 <script type="text/javascript" src="d3/d3.min.js"></script>
 <script src="d3/colorbrewer.js" type="text/javascript"></script>
+
 <script>
 
 
@@ -1198,8 +1269,6 @@ d3.csv("data/fem_top25.csv", function(error, data) {
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-
-    </section>
 
     </body>
 
