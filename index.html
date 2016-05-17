@@ -211,14 +211,14 @@ div.tooltip {
     <div id="map_popularbooks"></div>
 
     <select id="select_knn">
-          <option value="KNN/knn50.csv">K = 50</option>
-          <option value="KNN/knn100.csv">K = 100</option>
-          <option value="KNN/knn200.csv">K = 200</option>
-          <option value="KNN/knn300.csv">K = 300</option>
-          <option value="KNN/knn50_edited.csv" >K = 50,without "Praktiske fag"</option>
-          <option value="KNN/knn100_edited.csv">K = 100,without "Praktiske fag"</option>
-          <option value="KNN/knn200_edited.csv">K = 200,without "Praktiske fag"</option>
-          <option value="KNN/knn300_edited.csv">K = 300,without "Praktiske fag"</option>
+          <option value="knn/knn50.csv">K = 50</option>
+          <option value="knn/knn100.csv">K = 100</option>
+          <option value="knn/knn200.csv">K = 200</option>
+          <option value="knn/knn300.csv">K = 300</option>
+          <option value="knn/knn50_edited.csv" >K = 50,without "Praktiske fag"</option>
+          <option value="knn/knn100_edited.csv">K = 100,without "Praktiske fag"</option>
+          <option value="knn/knn200_edited.csv">K = 200,without "Praktiske fag"</option>
+          <option value="knn/knn300_edited.csv">K = 300,without "Praktiske fag"</option>
     </select>
 
     <div id="map_knn"></div>
@@ -1105,7 +1105,7 @@ d3.csv("data/fem_top25.csv", function(error, data) {
                     d3.select("#map_popularbooks").append("svg").attr("width", 600).attr("height", 800);
                     updateData("kommuneratio/Filosofi.csv");
 
-                    plotKNN("KNN/knn50.csv")
+                    plotKNN("knn/knn50.csv")
                 
                     d3.selectAll("p")
                             .on("click", function() {
